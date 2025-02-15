@@ -12,7 +12,7 @@ import SpriteContainer from './components/SpriteContainer.vue'
 import UserInterface from './components/UserInterface.vue'
 </script>
 
-<style>
+<style lang="scss">
 body {
   margin: 0;
 }
@@ -22,5 +22,27 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.rarity {
+  &--common {
+    --rarity-colour: grey;
+  }
+
+  &--uncommon {
+    --rarity-colour: #b3ffb3;
+  }
+
+  &--rare {
+    --rarity-colour: #b3b3ff;
+  }
+
+  &--epic {
+    --rarity-colour: #ffb3ff;
+  }
+
+  &--legendary {
+    --rarity-colour: #ffb3b3;
+  }
 }
 </style>

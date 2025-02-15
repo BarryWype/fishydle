@@ -36,7 +36,7 @@ const rods = ref([{ name: 'rod1' }])
 }
 
 .rod {
-  &:last-child {
+  &:last-child:not(:first-child) {
     transform: rotateY(180deg);
   }
 }

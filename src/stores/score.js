@@ -1,10 +1,15 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref,computed } from 'vue'
 
 export const useScoreStore = defineStore('score', () => {
   const score = ref(0)
+  const fishHistory = ref([])
 
-  const incrementScore = () => score.value++
+  const incrementScore = (addedScore) => score.value += addedScore
+  const addFish = (fish) =>
+    fishHistory.value.push(fish)
 
-  return { score, incrementScore }
+    const getFishHistory = computed(() => fishHistory.value)
+    
+  return { score, incrementScore, addFish, getFishHistory }
 })
