@@ -1,10 +1,7 @@
 # fishydle
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Fishdydle is a web game that sit on a small part of your screen.
+You can catch and automate catching fish.
 
 ## Customize configuration
 
@@ -33,3 +30,23 @@ yarn build
 ```sh
 yarn lint
 ```
+
+## Future ideas
+
+- [ ] Multiple rod (up to 3)
+- [ ] Rename rods
+- [ ] Better image for rod
+- [ ] Add size PB
+- [ ] Money dependant on the size of the fish
+- [ ] Add a tutorial
+- [ ] Different types of rods
+- [ ] Different types of fish for each rod
+- [ ] Rare chests with loots, separate keys?
+- [ ] Ability ave the game
+- [ ] Add images for fish
+- [ ] Being able to buy a boat (different rods?)
+- [ ] After buying a boat, crabpots and fishing nets
+- [ ] Night/day cycle
+- [ ] Fish variation depending on the time of day
+- [ ] Upgrade for night/day
+- [ ] Tide?
