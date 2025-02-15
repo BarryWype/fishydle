@@ -1,0 +1,11 @@
+{
+  "name": "Default Rod",
+  "rarity": "common",
+  "value": 1,
+  "autoPickTime": 10,
+  "autoPickTimeMin": 1,
+  "readyToFishTime": 5,
+  "readyToFishTimeMin": 1,
+  "maxWaitTimeFishing": 20,
+  "maxWaitTimeFishingMin": 5
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "better-bot",
+    "name": "Better bot",
+    "price": 1000,
+    "description": "By default, if you don't click on the rod, the fish will be automatically caught after {%} seconds. This upgrade will reduce that time by 1 second.",
+    "requiredDataForDescription": [
+      {
+        "namespace": "rod",
+        "dataKey": "autoPickTime"
+      }
+    ],
+    "effects": [
+      {
+        "namespace": "rod",
+        "dataKey": "autoPickTime",
+        "value": -1
+      }
+    ],
+    "isShopItem": true
+  },
+  {
+    "id": "better-baitbox",
+    "name": "Better baitbox",
+    "price": 1000,
+    "description": "By default, you need to wait {%} seconds before being able to catch another fish. This upgrade will reduce that time by 0.5 second.",
+    "requiredDataForDescription": [
+      {
+        "namespace": "rod",
+        "dataKey": "readyToFishTime"
+      }
+    ],
+    "effects": [
+      {
+        "namespace": "rod",
+        "dataKey": "readyToFishTime",
+        "value": -0.5
+      }
+    ],
+    "isShopItem": true
+  },
+  {
+    "id": "better-bait",
+    "name": "Better bait",
+    "price": 1000,
+    "description": "By default, you might have to wait up to {%} seconds to catch a fish. This upgrade will reduce that time by 1 second.",
+    "requiredDataForDescription": [
+      {
+        "namespace": "rod",
+        "dataKey": "maxWaitTimeFishing"
+      }
+    ],
+    "effects": [
+      {
+        "namespace": "rod",
+        "dataKey": "maxWaitTimeFishing",
+        "value": -1
+      }
+    ],
+    "isShopItem": true
+  }
+]

@@ -13,8 +13,50 @@ import UserInterface from './components/UserInterface.vue'
 </script>
 
 <style lang="scss">
+// TODO put all that in a separate file
+
 body {
   margin: 0;
+}
+
+:root {
+  --blue: #c8ceee;
+  --green: #cbd3ad;
+  --yellow: #f7e5b7;
+  --orange: #ffc697;
+  --pink: #f9c5c7;
+  --purple: #d1b3c4;
+  --beige: #fce7c8;
+  --red: #f9c5c7;
+  --black: #222222;
+  --white: #fefefe;
+  --grey: #999999;
+  --light-grey: #cccccc;
+  --dark-grey: #666666;
+  --dark-blue: #333366;
+  --dark-green: #5a6436;
+  --dark-yellow: #90904f;
+  --dark-orange: #663333;
+  --dark-pink: #663366;
+  --dark-purple: #333366;
+  --dark-beige: #666633;
+  --dark-red: #663333;
+  --dark-black: #333333;
+  --dark-white: #cccccc;
+}
+
+.button {
+  padding: 12px;
+  background-color: var(--green);
+  border: 1px solid var(--beige);
+  font-weight: 700;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--dark-green);
+    color: var(--beige);
+  }
 }
 
 .game-container {
@@ -22,15 +64,16 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  border-right: 1px solid var(--black);
 }
 
 .rarity {
   &--common {
-    --rarity-colour: grey;
+    --rarity-colour: var(--grey);
   }
 
   &--uncommon {
-    --rarity-colour: #b3ffb3;
+    --rarity-colour: #48ca48;
   }
 
   &--rare {

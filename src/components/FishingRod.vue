@@ -12,11 +12,20 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-import { useScoreStore } from '@/stores/score'
+import { onMounted, ref, toRefs } from 'vue'
+import { useFishingStore } from '@/stores/fishing'
 import { getRandomNumber } from '@/composables/helper'
 
-const scoreStore = useScoreStore()
+const props = defineProps({
+  config: {
+    type: Object,
+    required: true,
+  },
+})
+
+const { config } = toRefs(props)
+
+const fishingStore = useFishingStore()
 
 const active = ref(false)
 const autoPick = ref(null)
@@ -34,10 +43,8 @@ const handleRodClick = () => {
     if (autoPick.value) {
       clearTimeout(autoPick.value)
     }
-    console.log('You caught a', fish.value.name)
-
-    scoreStore.incrementScore(fish.value.value)
-    scoreStore.addFish(fish.value)
+    fishingStore.incrementScore(fish.value.value)
+    fishingStore.addFish(fish.value)
     active.value = false
     initRod()
   }
@@ -55,9 +62,9 @@ const initRod = () => {
       generateFish()
       autoPick.value = setTimeout(() => {
         handleRodClick()
-      }, 5000)
+      }, config.value.autoPickTime * 1000)
     },
-    getRandomNumber(5000, 20000),
+    getRandomNumber(config.value.readyToFishTime * 1000, config.value.maxWaitTimeFishing * 1000),
   )
 }
 

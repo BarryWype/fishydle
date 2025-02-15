@@ -11,10 +11,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, toRef } from 'vue'
 import FishingRod from './FishingRod.vue'
+import { useFishingStore } from '@/stores/fishing'
 
-const rods = ref([{ name: 'rod1' }])
+const fishingStore = useFishingStore()
+
+const rods = toRef(fishingStore.getRods)
+
+onMounted(() => {
+  fishingStore.initRods()
+})
 </script>
 
 <style lang="scss" scoped>
