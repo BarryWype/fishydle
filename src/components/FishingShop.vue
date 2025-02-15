@@ -11,7 +11,7 @@ import ShopItem from './ShopItem.vue'
 
 const shopStore = useShopStore()
 
-const items = toRefs(shopStore.storeItems)
+const items = toRefs(shopStore.shopItems)
 </script>
 
 <style lang="scss">

@@ -1,8 +1,8 @@
 [
   {
-    "id": "better-bot",
-    "name": "Better bot",
-    "price": 1000,
+    "id": "ding-ding",
+    "name": "Ding-ding",
+    "price": 10,
     "description": "By default, if you don't click on the rod, the fish will be automatically caught after {%} seconds. This upgrade will reduce that time by 1 second.",
     "requiredDataForDescription": [
       {
@@ -22,7 +22,7 @@
   {
     "id": "better-baitbox",
     "name": "Better baitbox",
-    "price": 1000,
+    "price": 100,
     "description": "By default, you need to wait {%} seconds before being able to catch another fish. This upgrade will reduce that time by 0.5 second.",
     "requiredDataForDescription": [
       {
@@ -42,7 +42,7 @@
   {
     "id": "better-bait",
     "name": "Better bait",
-    "price": 1000,
+    "price": 150,
     "description": "By default, you might have to wait up to {%} seconds to catch a fish. This upgrade will reduce that time by 1 second.",
     "requiredDataForDescription": [
       {

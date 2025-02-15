@@ -1,8 +1,8 @@
 <template>
   <div class="user-interface">
     <div class="user-interface__header">
-      <div>Score: {{ fishingStore.score }}</div>
-      <div>Money: ${{ fishingStore.score }}</div>
+      <div>Score: {{ fishermanStore.score }}</div>
+      <div>Money: ${{ fishermanStore.monney }}</div>
     </div>
     <div class="tabs">
       <button class="button" @click="tabOpen = 1">Store</button>
@@ -13,7 +13,7 @@
       <fishing-shop />
     </div>
     <div v-if="tabOpen === 2" class="tab-content">
-      <div v-for="rod in fishingStore.getRods" :key="rod.name" class="rod">
+      <div v-for="rod in fishingStore.currentRods" :key="rod.name" class="rod">
         <div class="rod__name">{{ rod.name }}</div>
         <div class="rod__auto-pick-time">{{ rod.autoPickTime }}</div>
         <div class="rod__ready-to-fish-time">{{ rod.readyToFishTime }}</div>
@@ -37,10 +37,12 @@
 <script setup>
 import { ref } from 'vue'
 import { useFishingStore } from '@/stores/fishing'
+import { useFishermanStore } from '@/stores/fisherman'
 
 import FishingShop from './FishingShop.vue'
 
 const fishingStore = useFishingStore()
+const fishermanStore = useFishermanStore()
 
 const tabOpen = ref(1)
 </script>

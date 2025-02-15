@@ -51,11 +51,18 @@ body {
   border: 1px solid var(--beige);
   font-weight: 700;
   border-radius: 4px;
+  color: var(--dark-green);
 
   &:hover {
     cursor: pointer;
     background-color: var(--dark-green);
     color: var(--beige);
+  }
+
+  &:disabled {
+    background-color: var(--grey);
+    color: var(--dark-green);
+    cursor: default;
   }
 }
 

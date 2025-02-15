@@ -2,9 +2,11 @@ import { computed } from 'vue'
 import { defineStore } from 'pinia'
 import items from '@/data/items.json'
 import defaultRod from '@/data/defaultRod.json'
+import { useFishermanStore } from '@/stores/fisherman'
 
 export const useShopStore = defineStore('shop', () => {
-    
+    const fishermanStore = useFishermanStore()
+
     const getItemSpec = (element) => {
         switch (element.namespace) {
             case 'rod':
@@ -23,7 +25,7 @@ export const useShopStore = defineStore('shop', () => {
         return shopDescription
     }
 
-    const storeItems = computed(() => items
+    const shopItems = computed(() => items
             .filter(item => item.isShopItem)
             .map(item => {
                 item.shopDescription = generateShopDescription(item)
@@ -31,7 +33,16 @@ export const useShopStore = defineStore('shop', () => {
             })
     )
 
+    const puchaseItem = (item, rod) => {
+        // make sure the player has enough money
+        if (fishermanStore.monney >= item.price) {
+            fishermanStore.changeMonney(-item.price)
+            fishermanStore.addItem(item, rod)
+        }
+    }
+
     return {
-        storeItems
+        shopItems,
+        puchaseItem
     }
 })

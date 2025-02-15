@@ -13,14 +13,14 @@
 <script setup>
 import { onMounted, toRef } from 'vue'
 import FishingRod from './FishingRod.vue'
-import { useFishingStore } from '@/stores/fishing'
+import { useFishermanStore } from '../stores/fisherman'
 
-const fishingStore = useFishingStore()
+const fishermanStore = useFishermanStore()
 
-const rods = toRef(fishingStore.getRods)
+const rods = toRef(fishermanStore.getCurrentRod)
 
 onMounted(() => {
-  fishingStore.initRods()
+  fishermanStore.initRods()
 })
 </script>
 

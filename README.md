@@ -34,6 +34,7 @@ yarn lint
 ## Future ideas
 
 - [ ] Multiple rod (up to 3)
+- [ ] Fish counter
 - [ ] Rename rods
 - [ ] Better image for rod
 - [ ] Add size PB
