@@ -7,5 +7,6 @@
   "readyToFishTime": 5,
   "readyToFishTimeMin": 1,
   "maxWaitTimeFishing": 20,
-  "maxWaitTimeFishingMin": 5
+  "maxWaitTimeFishingMin": 5,
+  "items": []
 }

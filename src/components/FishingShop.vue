@@ -19,6 +19,5 @@ const items = toRefs(shopStore.shopItems)
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding-inline: 4px;
 }
 </style>

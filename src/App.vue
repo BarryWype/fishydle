@@ -66,6 +66,18 @@ body {
   }
 }
 
+.icon-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: var(--dark-green);
+
+  &:hover {
+    background-color: var(--green);
+  }
+}
+
 .game-container {
   width: 350px;
   height: 100vh;

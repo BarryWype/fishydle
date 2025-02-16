@@ -13,12 +13,7 @@
       <fishing-shop />
     </div>
     <div v-if="tabOpen === 2" class="tab-content">
-      <div v-for="rod in fishingStore.currentRods" :key="rod.name" class="rod">
-        <div class="rod__name">{{ rod.name }}</div>
-        <div class="rod__auto-pick-time">{{ rod.autoPickTime }}</div>
-        <div class="rod__ready-to-fish-time">{{ rod.readyToFishTime }}</div>
-        <div class="rod__max-wait-time-fishing">{{ rod.maxWaitTimeFishing }}</div>
-      </div>
+      <rods-info />
     </div>
     <div class="tab-content fish-history-tab" v-if="tabOpen === 3">
       <div class="fish-history">
@@ -40,6 +35,7 @@ import { useFishingStore } from '@/stores/fishing'
 import { useFishermanStore } from '@/stores/fisherman'
 
 import FishingShop from './FishingShop.vue'
+import RodsInfo from './RodsInfo.vue'
 
 const fishingStore = useFishingStore()
 const fishermanStore = useFishermanStore()
@@ -82,6 +78,8 @@ const tabOpen = ref(1)
 .tab-content {
   overflow: auto;
   padding-top: 8px;
+  padding-inline: 12px;
+  padding-top: 12px;
 }
 
 .fish-history {
@@ -92,10 +90,5 @@ const tabOpen = ref(1)
   &__fish {
     color: var(--rarity-colour);
   }
-}
-
-.fish-history-tab {
-  padding-inline: 12px;
-  padding-top: 12px;
 }
 </style>
