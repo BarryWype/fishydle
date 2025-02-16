@@ -35,8 +35,8 @@ export const useShopStore = defineStore('shop', () => {
 
     const puchaseItem = (item, rod) => {
         // make sure the player has enough money
-        if (fishermanStore.monney >= item.price) {
-            fishermanStore.changeMonney(-item.price)
+        if (fishermanStore.money >= item.price) {
+            fishermanStore.changeMoney(-item.price)
             fishermanStore.addItem(item, rod)
         }
     }

@@ -1,32 +1,30 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import defaultRod from '@/data/defaultRod.json'
 
 export const useFishermanStore = defineStore('fisherman', () => {
     const score = ref(0)
-    const monney = ref(10)
+    const money = ref(10)
     const currentRods = ref([])
 
     const getCurrentRod = () => {
         return currentRods.value
     }
 
-    const initRods = () => {
-        if (!currentRods.value.length) {
-          currentRods.value.push({...defaultRod})
-        }
-    }
-
-    const incrementScore = (addedScore) => {
-        monney.value += addedScore
+    const incrementScore = async (addedScore) => {
         score.value += addedScore
+        changeMoney(addedScore)
+        await nextTick()
+        makePersistScore()
     }
 
-    const changeMonney = (amount) => {        
-        monney.value += amount
+    const changeMoney = async (amount) => {        
+        money.value += amount
+        await nextTick()
+        makePersistMoney()
     }
 
-    const addItem = (item, rod) => {
+    const addItem = async (item, rod) => {
         if (rod) {
             rod.items.push(item)
         }
@@ -45,16 +43,55 @@ export const useFishermanStore = defineStore('fisherman', () => {
                 break;
             }
         });
+
+        await nextTick()
+        makePersistRods()
+    }
+
+    const makePersistScore = () => {
+        localStorage.setItem('score', score.value)
+    }
+    
+    const makePersistMoney = () => {
+        localStorage.setItem('money', money.value)
+    }
+    
+    const makePersistRods = () => {
+        localStorage.setItem('currentRods', JSON.stringify(currentRods.value))
+    }
+
+    const initFisherman = () => {
+        const persistedScore = JSON.parse(localStorage.getItem('score'))
+        if (persistedScore) {
+            score.value = persistedScore
+        }
+        
+        const persistedMoney = JSON.parse(localStorage.getItem('money'))
+        if (persistedMoney) {
+            money.value = persistedMoney
+        } else {
+            money.value = 10
+        }
+        
+        const persistedRods = JSON.parse(localStorage.getItem('currentRods'))
+        if (persistedRods) {
+            currentRods.value = persistedRods
+        } else {
+            currentRods.value = [{...defaultRod}]
+        }
     }
 
     return {
         score,
-        monney,
+        money,
         currentRods,
         getCurrentRod,
         incrementScore,
-        initRods,
-        changeMonney,
-        addItem
+        changeMoney,
+        addItem,
+        makePersistScore,
+        makePersistMoney,
+        makePersistRods,
+        initFisherman
     }
 })

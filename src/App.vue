@@ -8,8 +8,19 @@
 </template>
 
 <script setup>
-import SpriteContainer from './components/SpriteContainer.vue'
-import UserInterface from './components/UserInterface.vue'
+import SpriteContainer from '@/components/SpriteContainer.vue'
+import UserInterface from '@/components/UserInterface.vue'
+import { useFishermanStore } from '@/stores/fisherman'
+import { useFishingStore } from '@/stores/fishing'
+import { onMounted } from 'vue'
+
+const fishermanStore = useFishermanStore()
+const fishingStore = useFishingStore()
+
+onMounted(() => {
+  fishermanStore.initFisherman()
+  fishingStore.initFishing()
+})
 </script>
 
 <style lang="scss">
@@ -44,6 +55,7 @@ body {
   --dark-black: #333333;
   --dark-white: #cccccc;
   --gold: #ffd700;
+  --error: #c33d3d;
 }
 
 .button {

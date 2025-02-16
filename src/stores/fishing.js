@@ -1,12 +1,16 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, computed, nextTick } from 'vue'
 import { getRandomNumber } from '@/composables/helper'
 import fishList from '@/data/fishList.json'
 
 export const useFishingStore = defineStore('fishing', () => {
   const fishHistory = ref([])
 
-  const addFish = (fish) => fishHistory.value.push(fish)
+  const addFish = async (fish) => {
+    fishHistory.value.push(fish)
+    await nextTick()
+    makePersistFishHistory()
+  }
 
   const getFishHistory = computed(() => fishHistory.value)
 
@@ -24,10 +28,25 @@ export const useFishingStore = defineStore('fishing', () => {
     }
     return selectedFish
   }
+
+  const makePersistFishHistory = () => {
+      localStorage.setItem('fishHistory', JSON.stringify({
+          fishHistory: fishHistory.value
+      }))
+  }
+
+  const initFishing = () => {
+    const fishHistory = JSON.parse(localStorage.getItem('fishHistory'))
+    if (fishHistory) {
+      fishHistory.value = fishHistory
+    }
+  }
   
   return {
     addFish,
     getFishHistory,
-    getFish
+    getFish,
+    makePersistFishHistory,
+    initFishing
   }
 })

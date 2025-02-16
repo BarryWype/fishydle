@@ -35,7 +35,7 @@ const props = defineProps({
 
 const fishermanStore = useFishermanStore()
 const shopStore = useShopStore()
-fishermanStore.initRods()
+// fishermanStore.initFisherman()
 
 const { item } = toRefs(props)
 
@@ -47,7 +47,7 @@ const selectedRod = ref(rods[0])
 const affectRods = !!item.value.effects.find((effect) => effect.namespace === 'rod')
 
 const preventPurchase = computed(() => {
-  return fishermanStore.monney < item.value.price
+  return fishermanStore.money < item.value.price
 })
 </script>
 

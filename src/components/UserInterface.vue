@@ -2,7 +2,7 @@
   <div class="user-interface">
     <div class="user-interface__header">
       <div>Score: {{ fishermanStore.score }}</div>
-      <div>Money: ${{ fishermanStore.monney }}</div>
+      <div>Money: ${{ fishermanStore.money }}</div>
     </div>
     <div class="tabs">
       <button class="button" @click="tabOpen = 1">Store</button>
