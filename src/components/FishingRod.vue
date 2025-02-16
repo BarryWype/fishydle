@@ -53,7 +53,7 @@ const catchFish = async () => {
     await delay(3000)
     showInfo.value = false
 
-    initRod()
+    initFishing()
   }
 }
 
@@ -61,7 +61,7 @@ const generateFish = () => {
   fish.value = fishingStore.getFish(getRandomNumber(0, 10000))
 }
 
-const initRod = async () => {
+const initFishing = async () => {
   await delay(
     getRandomNumber(config.value.readyToFishTime * 1000, config.value.maxWaitTimeFishing * 1000),
   )
@@ -73,7 +73,7 @@ const initRod = async () => {
 }
 
 onMounted(() => {
-  initRod()
+  initFishing()
 })
 </script>
 

@@ -12,7 +12,7 @@
       <button
         class="button"
         :disabled="preventPurchase"
-        @click="shopStore.puchaseItem(item, selectedRod)"
+        @click="shopStore.puchaseItem(item, affectRods ? selectedRod : null)"
       >
         Buy
       </button>
@@ -23,7 +23,6 @@
 
 <script setup>
 import { computed, ref, toRefs } from 'vue'
-import { useFishingStore } from '../stores/fishing'
 import { useFishermanStore } from '../stores/fisherman'
 import { useShopStore } from '../stores/shop'
 
@@ -34,7 +33,6 @@ const props = defineProps({
   },
 })
 
-const fishingStore = useFishingStore()
 const fishermanStore = useFishermanStore()
 const shopStore = useShopStore()
 fishermanStore.initRods()

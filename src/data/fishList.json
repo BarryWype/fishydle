@@ -128,7 +128,7 @@
     "interval": [9999, 10000],
     "fishes": [
       {
-        "name": "Boot",
+        "name": "Holly boot",
         "value": 100,
         "size": [36, 45]
       }
