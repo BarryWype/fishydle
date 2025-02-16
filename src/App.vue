@@ -43,6 +43,7 @@ body {
   --dark-red: #663333;
   --dark-black: #333333;
   --dark-white: #cccccc;
+  --gold: #ffd700;
 }
 
 .button {

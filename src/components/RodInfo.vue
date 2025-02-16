@@ -34,6 +34,5 @@ const props = defineProps({
 
 const { rod } = toRefs(props)
 
-const editRodName = ref(false)
 const rodName = ref(rod.value.name)
 </script>

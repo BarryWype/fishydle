@@ -11,7 +11,7 @@
       @click="catchFish"
       class="rod"
       :class="{ 'rod--active': active }"
-      src="../assets/rod.webp"
+      src="../assets/rod1.webp"
       alt=""
     />
   </div>
@@ -89,6 +89,8 @@ onMounted(() => {
 .catch {
   position: absolute;
   right: 0;
+  left: 0;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -116,12 +118,13 @@ onMounted(() => {
 }
 
 .rod {
-  width: 90px;
-  height: 200px;
+  width: 200px;
+  height: 240px;
+  animation: alive 5s infinite ease-in-out;
+  transform-origin: bottom left;
 
   &--active {
     animation: wave 1s infinite ease-in-out;
-    transform-origin: bottom center;
   }
 }
 
@@ -135,13 +138,13 @@ onMounted(() => {
   }
 }
 
-@keyframes wave {
+@keyframes alive {
   0%,
   100% {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(10deg);
+    transform: rotate(3deg);
   }
 }
 </style>

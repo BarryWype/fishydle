@@ -16,28 +16,19 @@
       <rods-info />
     </div>
     <div class="tab-content fish-history-tab" v-if="tabOpen === 3">
-      <div class="fish-history">
-        <span
-          v-for="(fish, index) in fishingStore.getFishHistory"
-          :key="index"
-          :class="`rarity--${fish.rarity}`"
-          class="fish-history__fish"
-          >{{ fish.name }} ({{ fish.value }})</span
-        >
-      </div>
+      <fisherman-history />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { useFishingStore } from '@/stores/fishing'
 import { useFishermanStore } from '@/stores/fisherman'
 
 import FishingShop from './FishingShop.vue'
 import RodsInfo from './RodsInfo.vue'
+import FishermanHistory from './FishermanHistory.vue'
 
-const fishingStore = useFishingStore()
 const fishermanStore = useFishermanStore()
 
 const tabOpen = ref(1)
@@ -80,15 +71,5 @@ const tabOpen = ref(1)
   padding-top: 8px;
   padding-inline: 12px;
   padding-top: 12px;
-}
-
-.fish-history {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  &__fish {
-    color: var(--rarity-colour);
-  }
 }
 </style>
