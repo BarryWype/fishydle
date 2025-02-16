@@ -31,11 +31,17 @@ yarn build
 yarn lint
 ```
 
+## Libraries
+
+### Icons
+
+We use material icons, the list of icons can be found [here](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:delete_sweep:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%23e8eaed)
+
 ## Future ideas
 
 - [ ] Multiple rod (up to 3)
 - [ ] Fish counter
-- [ ] Rename rods
+- [x] Rename rods
 - [ ] Better image for rod
 - [ ] Add size PB
 - [ ] Money dependant on the size of the fish
@@ -43,7 +49,7 @@ yarn lint
 - [ ] Different types of rods
 - [ ] Different types of fish for each rod
 - [ ] Rare chests with loots, separate keys?
-- [ ] Ability ave the game
+- [x] Ability to save the game (localstorage, can be improved)
 - [ ] Add images for fish
 - [ ] Being able to buy a boat (different rods?)
 - [ ] After buying a boat, crabpots and fishing nets
