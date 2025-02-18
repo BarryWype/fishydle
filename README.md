@@ -57,3 +57,8 @@ We use material icons, the list of icons can be found [here](https://fonts.googl
 - [ ] Fish variation depending on the time of day
 - [ ] Upgrade for night/day
 - [ ] Tide?
+
+# Authors
+
+devs: Barrywype, Zikx10
+art: Dyjoo
