@@ -36,9 +36,9 @@ export const useFishingStore = defineStore('fishing', () => {
   }
 
   const initFishing = () => {
-    const fishHistory = JSON.parse(localStorage.getItem('fishHistory'))
-    if (fishHistory) {
-      fishHistory.value = fishHistory
+    const localFishHistory = JSON.parse(localStorage.getItem('fishHistory'))
+    if (localFishHistory) {
+      fishHistory.value = localFishHistory.fishHistory
     }
   }
   
