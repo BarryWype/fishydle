@@ -11,7 +11,7 @@
       @click="catchFish"
       class="rod"
       :class="{ 'rod--active': active }"
-      src="../assets/rod1.webp"
+      src="../assets/rod2.webp"
       alt=""
     />
   </div>
