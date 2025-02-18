@@ -3,6 +3,10 @@
 Fishdydle is a web game that sit on a small part of your screen.
 You can catch and automate catching fish.
 
+## Game
+
+You can play the game [here](https://barrywype.github.io/fishydle/)
+
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vite.dev/config/).
@@ -60,5 +64,5 @@ We use material icons, the list of icons can be found [here](https://fonts.googl
 
 # Authors
 
-devs: Barrywype, Zikx10
+devs: Barrywype, Zikx10  
 art: Dyjoo
